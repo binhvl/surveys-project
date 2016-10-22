@@ -12,14 +12,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self customizeUI];
     [self showProgressHUDDefault];
+    
     [[SAUserService sharedInstance] getSurveysFromAPI:^(NSArray *data) {
-//        NSLog(@"%@",data.firstObject);
         SAHotelInfo *hotel = [[SAHotelInfo alloc]initWithJson:data.firstObject];
         NSLog(@"%@",hotel.descriptionInfo);
         [self hideProgressHUD];
     } failed:^(NSError *error) {
+        [self hideProgressHUD];
         NSLog(@"%@",error.description);
     }];
 }
@@ -46,9 +48,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 1;
 }
-
-// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
