@@ -46,6 +46,15 @@
     [self.view addSubview:self.progressHUD];
 }
 
+/**
+ *  Push view controller
+ *
+ *  @param vcName   view controller name
+ *  @param animated animation
+ */
+- (void)pushViewController:(NSString *)vcName animated:(BOOL)animated {
+    [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:vcName] animated:animated];
+}
 
 /*
 #pragma mark - Navigation

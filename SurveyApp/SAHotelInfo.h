@@ -12,4 +12,5 @@
 @property (strong,nonatomic) NSString *cover_image_url;
 @property (strong,nonatomic) NSString *title;
 @property (strong,nonatomic) NSString *descriptionInfo;
+-(NSArray *)parseListObject:(NSArray *)listObject;
 @end

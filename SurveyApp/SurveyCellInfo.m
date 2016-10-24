@@ -1,5 +1,6 @@
 #import "SurveyCellInfo.h"
-
+#import "UIImageView+AFNetworking.h"
+#define FULL_IMAGE 0
 @implementation SurveyCellInfo
 
 -(id)initCellFromNib{
@@ -9,12 +10,37 @@
                                               owner:self
                                             options:nil]firstObject];
     }
+    [self setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height -(44+20))];
     return self;
+}
+
+-(void)setDataForCell:(SAHotelInfo *)hotelInfo{
+    
+    // Init data is empty
+    self.lblName.text       = @"";
+    self.tvDescription.text = @"";
+    
+    // Check null object
+    if(hotelInfo){
+        if(self.lblName){
+            self.lblName.text       = hotelInfo.title;
+        }
+        if(hotelInfo.descriptionInfo){
+            self.tvDescription.text = hotelInfo.descriptionInfo;
+        }
+        if(hotelInfo.cover_image_url){
+            NSString *urlImageCover = hotelInfo.cover_image_url;
+            if(FULL_IMAGE){
+                urlImageCover = [NSString stringWithFormat:@"%@%@",urlImageCover,@"l"];
+            }
+            [self.imvHotel setImageWithURL:[NSURL URLWithString:urlImageCover] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+        }
+    }
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    // Initialization codes
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

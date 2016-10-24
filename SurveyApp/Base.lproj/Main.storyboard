@@ -19,15 +19,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eIp-aq-VOz">
-                                <rect key="frame" x="-16" y="0.0" width="352" height="568"/>
+                                <rect key="frame" x="-8" y="0.0" width="336" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="rBD-rj-FtH"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="pmS-gG-53f"/>
                                 </connections>
                             </tableView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Tkc-Yx-rVS">
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Tkc-Yx-rVS">
                                 <rect key="frame" x="273" y="265" width="39" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="HZQ-VJ-LfR"/>
+                                    <constraint firstAttribute="width" constant="39" id="qHs-gV-s2M"/>
+                                </constraints>
                             </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8r-jR-8VE">
                                 <rect key="frame" x="60" y="481" width="200" height="42"/>
@@ -39,22 +43,30 @@
                                 <state key="normal" title="Take the Survey">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="touchTakeSurveyAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KTc-lR-p25"/>
+                                    <segue destination="ic8-hb-Zle" kind="push" identifier="sqSurveys" id="lec-2J-Kec"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eIp-aq-VOz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="7Og-hH-ziw"/>
+                            <constraint firstAttribute="trailing" secondItem="Tkc-Yx-rVS" secondAttribute="trailing" constant="8" id="0Sg-iL-7k6"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="X8r-jR-8VE" secondAttribute="bottom" constant="45" id="D6D-8X-UQq"/>
-                            <constraint firstItem="eIp-aq-VOz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ka2-87-NLE"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eIp-aq-VOz" secondAttribute="trailing" constant="-32" id="N00-Xx-UeL"/>
-                            <constraint firstItem="eIp-aq-VOz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-32" id="dPn-sf-TKI"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eIp-aq-VOz" secondAttribute="bottom" id="duz-so-Tlm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eIp-aq-VOz" secondAttribute="trailing" constant="-24" id="N7j-J8-ncb"/>
+                            <constraint firstItem="eIp-aq-VOz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QQz-jq-iYQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eIp-aq-VOz" secondAttribute="bottom" id="QjM-aZ-s27"/>
+                            <constraint firstItem="eIp-aq-VOz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-24" id="jMo-eC-PiX"/>
                             <constraint firstItem="X8r-jR-8VE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nzG-uI-s8F"/>
+                            <constraint firstItem="Tkc-Yx-rVS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vX6-CT-hjn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="SURVEYS" id="8pQ-KC-o3M">
                         <barButtonItem key="leftBarButtonItem" image="ic_refresh" id="8qI-dW-GzW">
                             <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="touchReloadPage:" destination="BYZ-38-t0r" id="PYJ-Zs-Ht3"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="ic_menu" id="6IM-Sh-thh">
                             <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -62,6 +74,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="btnTakeSurvey" destination="X8r-jR-8VE" id="7dA-me-Wgs"/>
+                        <outlet property="contraintTop" destination="QQz-jq-iYQ" id="4fH-9e-isN"/>
                         <outlet property="pageControl" destination="Tkc-Yx-rVS" id="naS-0N-6XE"/>
                         <outlet property="tableView" destination="eIp-aq-VOz" id="G8Q-ff-eOg"/>
                     </connections>
@@ -69,6 +82,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="802" y="322"/>
+        </scene>
+        <!--Take The Survey-->
+        <scene sceneID="2tk-L0-sOu">
+            <objects>
+                <viewController id="ic8-hb-Zle" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TO6-l3-gDq"/>
+                        <viewControllerLayoutGuide type="bottom" id="5dC-9l-ghF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wpr-cj-xIt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comming soon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qt-Ce-cHH">
+                                <rect key="frame" x="14" y="274" width="291" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="291" id="D1H-OF-aD3"/>
+                                    <constraint firstAttribute="height" constant="21" id="Uz6-IC-LW0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0qt-Ce-cHH" firstAttribute="centerX" secondItem="wpr-cj-xIt" secondAttribute="centerX" id="FjU-ul-lyG"/>
+                            <constraint firstItem="0qt-Ce-cHH" firstAttribute="centerY" secondItem="wpr-cj-xIt" secondAttribute="centerY" id="QGY-lq-IHb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Take The Survey" id="UoR-V7-56t">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="gF9-yJ-6qg"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p2C-iy-m97" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1323" y="328"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wes-Ld-vGV">
