@@ -19,6 +19,10 @@
 		0612F0321DBD3EBC00A611F6 /* NSUserDefaults+SAHotelInfoCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0612F0311DBD3EBC00A611F6 /* NSUserDefaults+SAHotelInfoCategory.m */; };
 		0612F0361DBD443000A611F6 /* RequestDataUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0612F0351DBD443000A611F6 /* RequestDataUtils.m */; };
 		0612F03F1DBD575100A611F6 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 0612F03E1DBD575100A611F6 /* placeholder.png */; };
+		0612F0421DBDAAF700A611F6 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0612F0411DBDAAF700A611F6 /* Reachability.m */; };
+		0612F0471DBDADDD00A611F6 /* AlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0612F0441DBDADDD00A611F6 /* AlertUtil.m */; };
+		0612F0481DBDADDD00A611F6 /* ErrorUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0612F0461DBDADDD00A611F6 /* ErrorUtil.m */; };
+		0612F04B1DBDB48900A611F6 /* NetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0612F04A1DBDB48900A611F6 /* NetworkUtil.m */; };
 		065DA2731DBA8CE600B4C5A7 /* SABaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = 065DA2721DBA8CE600B4C5A7 /* SABaseService.m */; };
 		065DA2761DBA924A00B4C5A7 /* SAUserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 065DA2751DBA924A00B4C5A7 /* SAUserService.m */; };
 		065DA27A1DBAB30D00B4C5A7 /* SABaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 065DA2791DBAB30D00B4C5A7 /* SABaseModel.m */; };
@@ -48,6 +52,14 @@
 		0612F0351DBD443000A611F6 /* RequestDataUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestDataUtils.m; sourceTree = "<group>"; };
 		0612F0371DBD4B8700A611F6 /* ConstantFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstantFile.h; sourceTree = "<group>"; };
 		0612F03E1DBD575100A611F6 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		0612F0401DBDAAF700A611F6 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		0612F0411DBDAAF700A611F6 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		0612F0431DBDADDD00A611F6 /* AlertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertUtil.h; sourceTree = "<group>"; };
+		0612F0441DBDADDD00A611F6 /* AlertUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertUtil.m; sourceTree = "<group>"; };
+		0612F0451DBDADDD00A611F6 /* ErrorUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorUtil.h; sourceTree = "<group>"; };
+		0612F0461DBDADDD00A611F6 /* ErrorUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorUtil.m; sourceTree = "<group>"; };
+		0612F0491DBDB48900A611F6 /* NetworkUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkUtil.h; sourceTree = "<group>"; };
+		0612F04A1DBDB48900A611F6 /* NetworkUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkUtil.m; sourceTree = "<group>"; };
 		065DA2701DBA897A00B4C5A7 /* SAServiceConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAServiceConst.h; sourceTree = "<group>"; };
 		065DA2711DBA8CE600B4C5A7 /* SABaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SABaseService.h; sourceTree = "<group>"; };
 		065DA2721DBA8CE600B4C5A7 /* SABaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SABaseService.m; sourceTree = "<group>"; };
@@ -195,8 +207,16 @@
 		0612F0331DBD440700A611F6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				0612F0431DBDADDD00A611F6 /* AlertUtil.h */,
+				0612F0441DBDADDD00A611F6 /* AlertUtil.m */,
+				0612F0451DBDADDD00A611F6 /* ErrorUtil.h */,
+				0612F0461DBDADDD00A611F6 /* ErrorUtil.m */,
+				0612F0401DBDAAF700A611F6 /* Reachability.h */,
+				0612F0411DBDAAF700A611F6 /* Reachability.m */,
 				0612F0341DBD443000A611F6 /* RequestDataUtils.h */,
 				0612F0351DBD443000A611F6 /* RequestDataUtils.m */,
+				0612F0491DBDB48900A611F6 /* NetworkUtil.h */,
+				0612F04A1DBDB48900A611F6 /* NetworkUtil.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -366,14 +386,18 @@
 			files = (
 				065DA27A1DBAB30D00B4C5A7 /* SABaseModel.m in Sources */,
 				0612F0361DBD443000A611F6 /* RequestDataUtils.m in Sources */,
+				0612F0481DBDADDD00A611F6 /* ErrorUtil.m in Sources */,
 				065DA2731DBA8CE600B4C5A7 /* SABaseService.m in Sources */,
 				0612F0321DBD3EBC00A611F6 /* NSUserDefaults+SAHotelInfoCategory.m in Sources */,
 				065DA2761DBA924A00B4C5A7 /* SAUserService.m in Sources */,
 				060DFFE71DB9CD120095D357 /* SAViewController.m in Sources */,
 				065DA27D1DBAB45B00B4C5A7 /* SAHotelInfo.m in Sources */,
+				0612F0471DBDADDD00A611F6 /* AlertUtil.m in Sources */,
 				060D00111DB9F4C80095D357 /* SABaseViewController.m in Sources */,
 				060D00091DB9EDE60095D357 /* SurveyCellInfo.m in Sources */,
+				0612F04B1DBDB48900A611F6 /* NetworkUtil.m in Sources */,
 				060DFFE41DB9CD120095D357 /* AppDelegate.m in Sources */,
+				0612F0421DBDAAF700A611F6 /* Reachability.m in Sources */,
 				060DFFE11DB9CD120095D357 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

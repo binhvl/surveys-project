@@ -12,13 +12,26 @@
 
 - (void)getSurveysFromAPI:(void (^)(NSArray *data))successBlock
                    failed:(void (^)(NSError* error))failedBlock{
-    [[SABaseService sharedInstance] requestWithGetMethod:GET uri:[self appendAccessToken:SA_URI_SURVEY_JSON accessToken:SA_ACCESS_TOKEN] parameter:nil success:^(id data) {
-        successBlock(data);
-    } failed:^(NSError *error) {
-        failedBlock(error);
-    }];
+    
+    // Check network before call api
+    if([NetworkUtil checkNetworkRechability]){
+        [[SABaseService sharedInstance] requestWithGetMethod:GET uri:[self appendAccessToken:SA_URI_SURVEY_JSON accessToken:SA_ACCESS_TOKEN] parameter:nil success:^(id data) {
+            successBlock(data);
+        } failed:^(NSError *error) {
+            [AlertUtil showAlertWithErrorWithoutTitle:error];
+            failedBlock(error);
+        }];
+    }
 }
 
+/**
+ *  Append access token for request
+ *
+ *  @param uri         short url of the request
+ *  @param accessToken the access token to call api
+ *
+ *  @return URI string
+ */
 -(NSString *)appendAccessToken:(NSString *)uri accessToken:(NSString *)accessToken{
     if(uri && accessToken){
     return [NSString stringWithFormat:@"%@?%@=%@",uri,SA_ACCESS_TOKEN,SA_TOKEN];

@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "SABaseService.h"
+#import "AlertUtil.h"
+#import "NetworkUtil.h"
 @interface SAUserService : SABaseService
 
 /**

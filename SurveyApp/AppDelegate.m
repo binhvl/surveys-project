@@ -1,4 +1,5 @@
 #import "AppDelegate.h"
+#import "AlertUtil.h"
 @interface AppDelegate ()
 
 @end
@@ -6,13 +7,37 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    // Get data from API
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSArray *array = [userDefaults readArrayWithCustomObjFromUserDefaults:kLIST_HOTEL_INFO_OBJECT];
-    if(!array){
+    NSArray *listHotelObjects = [userDefaults readArrayWithCustomObjFromUserDefaults:kLIST_HOTEL_INFO_OBJECT];
+    
+    // Won't reload if we had a local version
+    if(!listHotelObjects){
         [RequestDataUtils loadDataFromAPI];
     }
+    [self networkHandling:listHotelObjects];
     return YES;
+}
+/**
+ *  Handle the network connection
+ *
+ *  @param listHotelObjects list hotel objects
+ */
+-(void)networkHandling:(NSArray *)listHotelObjects{
+    // Monitoring network
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        if ([[AFNetworkReachabilityManager sharedManager] isReachable]) {
+            // Only reload when the local data is empty
+            if(!listHotelObjects){
+                [AlertUtil showAlertWithErrorTitle:@"" message:@"The network is connected, retrieving data"];
+                [RequestDataUtils loadDataFromAPI];
+            }
+        }else{
+            [AlertUtil showAlertWithErrorTitle:@"" message:@"The network connection was lost"];
+        }
+    }];
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
 }
 
 

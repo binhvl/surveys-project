@@ -4,5 +4,8 @@
 #import "SAHotelInfo.h"
 #import "ConstantFile.h"
 @interface RequestDataUtils : NSObject
+/**
+ *  Call to api to get data
+ */
 + (void)loadDataFromAPI;
 @end

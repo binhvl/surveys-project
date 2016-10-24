@@ -36,12 +36,16 @@
 }
 
 -(void)readData{
-    NSUserDefaults *userDefaults    = [NSUserDefaults standardUserDefaults];
-    NSArray *array                  = [userDefaults readArrayWithCustomObjFromUserDefaults:kLIST_HOTEL_INFO_OBJECT];
+    NSUserDefaults *userDefaults            = [NSUserDefaults standardUserDefaults];
+    NSArray *array                          = [userDefaults readArrayWithCustomObjFromUserDefaults:kLIST_HOTEL_INFO_OBJECT];
     if(array){
-        self.listHotelInfoObject        = array;
+        self.listHotelInfoObject            = array;
         [self.tableView reloadData];
         [self hideProgressHUD];
+    }else{
+        if(![NetworkUtil checkNetworkRechability]){
+            [self hideProgressHUD];
+        }
     }
 }
 
@@ -110,8 +114,12 @@
  *  @param sender button
  */
 - (IBAction)touchReloadPage:(id)sender {
-    [self showProgressHUDDefault];
-    [RequestDataUtils loadDataFromAPI];
+    if([NetworkUtil checkNetworkRechability]){
+        [self showProgressHUDDefault];
+        [RequestDataUtils loadDataFromAPI];
+    }else{
+        [AlertUtil showAlertWithErrorTitle:@"" message:@"The network connection was lost, please try again later"];
+    }
 }
 /**
  *  Allow user take survey

@@ -56,6 +56,22 @@
     [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:vcName] animated:animated];
 }
 
+/**
+ *  Show alert view with title
+ *
+ *  @param title   title of the message
+ *  @param message message of alert view
+ */
+- (void)showAlertWithTitle:(NSString*)title message:(NSString *)message{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:message preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        }]];
+        [[[[UIApplication sharedApplication] keyWindow] rootViewController] presentViewController:alertController animated:YES completion:^{
+        }];
+    });
+}
+
 /*
 #pragma mark - Navigation
 
