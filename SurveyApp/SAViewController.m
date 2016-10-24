@@ -10,6 +10,7 @@
 // Propety in class
 @property (strong, nonatomic) NSArray *listHotelInfoObject;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contraintTop;
+@property (nonatomic) long previousIndex;
 @end
 
 @implementation SAViewController
@@ -76,7 +77,12 @@
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(SurveyCellInfo *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"%ld",indexPath.row);
+    // make sure 2 rows is near
+    // Ex: row 1 is near row 0 and 2. row 1 can't near row 3
+    if(labs(indexPath.row - self.previousIndex) >=2){
+        return;
+    }
+    
     // Set data for cell
     if(self.listHotelInfoObject){
         SAHotelInfo *hotelObject = (SAHotelInfo *)[self.listHotelInfoObject objectAtIndex:indexPath.row];
@@ -84,25 +90,27 @@
             [cell setDataForCell:hotelObject];
         }
     }
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    SurveyCellInfo *cell = [tableView dequeueReusableCellWithIdentifier:@"IDSurveyCellInfo"];
-    if(!cell){
-        cell = [[SurveyCellInfo alloc]initCellFromNib];
-    }
-    [self.pageControl setCurrentPage:indexPath.row];
-    return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    self.pageControl.currentPage    = indexPath.row;
+    self.previousIndex              = indexPath.row;
     
     if(indexPath.row>=1){
         self.contraintTop.constant = 64;
     }else{
         self.contraintTop.constant = 0;
     }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"%ld",indexPath.row);
+    SurveyCellInfo *cell = [tableView dequeueReusableCellWithIdentifier:@"IDSurveyCellInfo"];
+    if(!cell){
+        cell = [[SurveyCellInfo alloc]initCellFromNib];
+    }
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return [UIScreen mainScreen].bounds.size.height -(44+20);
 }
 
