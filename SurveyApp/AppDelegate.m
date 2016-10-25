@@ -30,7 +30,6 @@
         if ([[AFNetworkReachabilityManager sharedManager] isReachable]) {
             // Only reload when the local data is empty
             if(!listHotelObjects){
-                [AlertUtil showAlertWithErrorTitle:@"" message:@"The network is connected, retrieving data"];
                 [RequestDataUtils loadDataFromAPI];
             }
         }else{

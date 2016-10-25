@@ -18,8 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B6u-cc-BtY">
+                                <rect key="frame" x="-4" y="64" width="328" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eIp-aq-VOz">
-                                <rect key="frame" x="-8" y="0.0" width="336" height="568"/>
+                                <rect key="frame" x="-4" y="64" width="328" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="rBD-rj-FtH"/>
@@ -52,12 +56,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Tkc-Yx-rVS" secondAttribute="trailing" constant="8" id="0Sg-iL-7k6"/>
+                            <constraint firstItem="B6u-cc-BtY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="1yU-Y8-4ib"/>
+                            <constraint firstItem="B6u-cc-BtY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="628-WQ-yBR"/>
+                            <constraint firstItem="eIp-aq-VOz" firstAttribute="trailing" secondItem="B6u-cc-BtY" secondAttribute="trailing" id="9sa-hG-RyO"/>
+                            <constraint firstItem="eIp-aq-VOz" firstAttribute="bottom" secondItem="B6u-cc-BtY" secondAttribute="bottom" id="APX-ki-Rde"/>
+                            <constraint firstItem="eIp-aq-VOz" firstAttribute="leading" secondItem="B6u-cc-BtY" secondAttribute="leading" id="Bvq-20-6OL"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="X8r-jR-8VE" secondAttribute="bottom" constant="45" id="D6D-8X-UQq"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eIp-aq-VOz" secondAttribute="trailing" constant="-24" id="N7j-J8-ncb"/>
-                            <constraint firstItem="eIp-aq-VOz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QQz-jq-iYQ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eIp-aq-VOz" secondAttribute="bottom" id="QjM-aZ-s27"/>
-                            <constraint firstItem="eIp-aq-VOz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-24" id="jMo-eC-PiX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="B6u-cc-BtY" secondAttribute="bottom" id="LNE-C6-sn7"/>
+                            <constraint firstItem="eIp-aq-VOz" firstAttribute="top" secondItem="B6u-cc-BtY" secondAttribute="top" id="R6v-Ed-rgU"/>
                             <constraint firstItem="X8r-jR-8VE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nzG-uI-s8F"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="B6u-cc-BtY" secondAttribute="trailing" constant="-20" id="vFV-Uv-cjJ"/>
                             <constraint firstItem="Tkc-Yx-rVS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vX6-CT-hjn"/>
                         </constraints>
                     </view>
@@ -74,7 +82,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="btnTakeSurvey" destination="X8r-jR-8VE" id="7dA-me-Wgs"/>
-                        <outlet property="contraintTop" destination="QQz-jq-iYQ" id="4fH-9e-isN"/>
                         <outlet property="pageControl" destination="Tkc-Yx-rVS" id="naS-0N-6XE"/>
                         <outlet property="tableView" destination="eIp-aq-VOz" id="G8Q-ff-eOg"/>
                     </connections>
