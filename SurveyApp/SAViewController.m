@@ -21,19 +21,31 @@
     [self registerForNotification];
 }
 
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:kNOTIFICATION_UPDATE_STATUS];
+}
 
+/**
+ *  Register notification
+ */
 -(void)registerForNotification{
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateStatusCompletion:)
                                                  name:kNOTIFICATION_UPDATE_STATUS
                                                object:nil];
 }
-
+/**
+ *  Update status complete from notify
+ *
+ *  @param notification notification
+ */
 -(void)updateStatusCompletion:(NSNotification *)notification{
     [self readData];
     [self hideProgressHUD];
 }
-
+/**
+ *  Read data from local data
+ */
 -(void)readData{
     NSUserDefaults *userDefaults            = [NSUserDefaults standardUserDefaults];
     NSArray *array                          = [userDefaults readArrayWithCustomObjFromUserDefaults:kLIST_HOTEL_INFO_OBJECT];

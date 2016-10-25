@@ -14,6 +14,11 @@
     return self;
 }
 
+/**
+ *  Set data fro table view cell
+ *
+ *  @param hotelInfo hotelInfo
+ */
 -(void)setDataForCell:(SAHotelInfo *)hotelInfo{
     
     // Init data is empty
