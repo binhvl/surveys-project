@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "DCKeyValueObjectMapping.h"
 #import "DCParserConfiguration.h"
-@interface SABaseModel : NSObject
+#import <Realm/Realm.h>
+@interface SABaseModel : RLMObject
 - (instancetype)initWithJson:(NSDictionary *)json;
 @end

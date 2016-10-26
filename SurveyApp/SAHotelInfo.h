@@ -9,8 +9,9 @@
 #import "SABaseModel.h"
 
 @interface SAHotelInfo : SABaseModel
-@property (strong,nonatomic) NSString *cover_image_url;
-@property (strong,nonatomic) NSString *title;
-@property (strong,nonatomic) NSString *descriptionInfo;
+@property NSString *cover_image_url;
+@property NSString *title;
+@property NSString *descriptionInfo;
+
 -(NSArray *)parseListObject:(NSArray *)listObject;
 @end

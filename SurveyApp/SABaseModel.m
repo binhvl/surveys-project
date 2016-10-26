@@ -13,6 +13,7 @@
     DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass: [self class]  andConfiguration:config];
     
     self = [parser parseDictionary:json];
+    
     return self;
 }
 

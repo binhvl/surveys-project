@@ -6,4 +6,5 @@ target 'SurveyApp' do
 pod 'AFNetworking', '~> 3.0'
 pod 'MBProgressHUD','~> 0.9.2'
 pod 'DCKeyValueObjectMapping', '~> 1.5'
+pod 'Realm','~> 0.103.1'
 end

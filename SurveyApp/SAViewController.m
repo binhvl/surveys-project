@@ -43,14 +43,15 @@
     [self readData];
     [self hideProgressHUD];
 }
+
 /**
  *  Read data from local data
  */
 -(void)readData{
-    NSUserDefaults *userDefaults            = [NSUserDefaults standardUserDefaults];
-    NSArray *array                          = [userDefaults readArrayWithCustomObjFromUserDefaults:kLIST_HOTEL_INFO_OBJECT];
+    
+    RLMResults<SAHotelInfo *> *array = [SAHotelInfo allObjects];
     if(array){
-        self.listHotelInfoObject            = array;
+        self.listHotelInfoObject            = (NSArray *)array;
         [self.tableView reloadData];
         [self hideProgressHUD];
     }else{

@@ -7,13 +7,9 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    // Get data from API
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSArray *listHotelObjects = [userDefaults readArrayWithCustomObjFromUserDefaults:kLIST_HOTEL_INFO_OBJECT];
-    
+    NSArray *listHotelObjects = (NSArray *)[SAHotelInfo allObjects];
     // Won't reload if we had a local version
-    if(!listHotelObjects){
+    if(listHotelObjects.count <=0){
         [RequestDataUtils loadDataFromAPI];
     }
     [self networkHandling:listHotelObjects];
@@ -29,7 +25,7 @@
     [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         if ([[AFNetworkReachabilityManager sharedManager] isReachable]) {
             // Only reload when the local data is empty
-            if(!listHotelObjects){
+            if(listHotelObjects.count <= 0){
                 [RequestDataUtils loadDataFromAPI];
             }
         }else{
