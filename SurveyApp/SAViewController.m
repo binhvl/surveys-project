@@ -103,6 +103,7 @@
     if(!cell){
         cell = [[SurveyCellInfo alloc]initCellFromNib];
     }
+//    cell.imvHotel.image = [SAImageViewUtil imageWithImage:cell.imvHotel.image scaledToSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-64)];
     return cell;
 }
 

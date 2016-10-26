@@ -1,6 +1,6 @@
 #import "SurveyCellInfo.h"
 #import "UIImageView+AFNetworking.h"
-#define FULL_IMAGE 0
+#define FULL_IMAGE 1
 @implementation SurveyCellInfo
 
 -(id)initCellFromNib{
@@ -11,6 +11,7 @@
                                             options:nil]firstObject];
     }
     [self setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height -(44+20))];
+    self.imvHotel.contentMode = UIViewContentModeCenter;
     return self;
 }
 

@@ -27,6 +27,7 @@
 		065DA2761DBA924A00B4C5A7 /* SAUserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 065DA2751DBA924A00B4C5A7 /* SAUserService.m */; };
 		065DA27A1DBAB30D00B4C5A7 /* SABaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 065DA2791DBAB30D00B4C5A7 /* SABaseModel.m */; };
 		065DA27D1DBAB45B00B4C5A7 /* SAHotelInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 065DA27C1DBAB45B00B4C5A7 /* SAHotelInfo.m */; };
+		06AECF981DC0AFCC00B2E7D9 /* SAImageViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 06AECF971DC0AFCC00B2E7D9 /* SAImageViewUtil.m */; };
 		7FDAE4126BFF06E09B134748 /* libPods-SurveyApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3BFFC64BCBA5AA3F28124B /* libPods-SurveyApp.a */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,8 @@
 		065DA2791DBAB30D00B4C5A7 /* SABaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SABaseModel.m; sourceTree = "<group>"; };
 		065DA27B1DBAB45B00B4C5A7 /* SAHotelInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAHotelInfo.h; sourceTree = "<group>"; };
 		065DA27C1DBAB45B00B4C5A7 /* SAHotelInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAHotelInfo.m; sourceTree = "<group>"; };
+		06AECF961DC0AFCC00B2E7D9 /* SAImageViewUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAImageViewUtil.h; sourceTree = "<group>"; };
+		06AECF971DC0AFCC00B2E7D9 /* SAImageViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAImageViewUtil.m; sourceTree = "<group>"; };
 		3F3BFFC64BCBA5AA3F28124B /* libPods-SurveyApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SurveyApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7207458C29F8789710154932 /* Pods-SurveyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SurveyApp/Pods-SurveyApp.release.xcconfig"; sourceTree = "<group>"; };
 		8FEFC3A43F58C8A17F8C5991 /* Pods-SurveyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SurveyApp/Pods-SurveyApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -217,6 +220,8 @@
 				0612F0351DBD443000A611F6 /* RequestDataUtils.m */,
 				0612F0491DBDB48900A611F6 /* NetworkUtil.h */,
 				0612F04A1DBDB48900A611F6 /* NetworkUtil.m */,
+				06AECF961DC0AFCC00B2E7D9 /* SAImageViewUtil.h */,
+				06AECF971DC0AFCC00B2E7D9 /* SAImageViewUtil.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -397,6 +402,7 @@
 				060D00111DB9F4C80095D357 /* SABaseViewController.m in Sources */,
 				060D00091DB9EDE60095D357 /* SurveyCellInfo.m in Sources */,
 				0612F04B1DBDB48900A611F6 /* NetworkUtil.m in Sources */,
+				06AECF981DC0AFCC00B2E7D9 /* SAImageViewUtil.m in Sources */,
 				060DFFE41DB9CD120095D357 /* AppDelegate.m in Sources */,
 				0612F0421DBDAAF700A611F6 /* Reachability.m in Sources */,
 				060DFFE11DB9CD120095D357 /* main.m in Sources */,
