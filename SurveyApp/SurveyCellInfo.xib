@@ -50,7 +50,6 @@
                     <constraint firstItem="82D-o8-u5g" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="uVs-9R-tCw"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.20424896478652954" green="0.29270726442337036" blue="0.98519867658615112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="imvHotel" destination="82D-o8-u5g" id="2T0-7H-GeS"/>
                 <outlet property="lblName" destination="KE2-57-paO" id="AR1-Ow-upg"/>
@@ -60,6 +59,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="placeholder.png" width="1280" height="960"/>
+        <image name="placeholder.png" width="625" height="953"/>
     </resources>
 </document>

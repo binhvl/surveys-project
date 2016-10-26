@@ -11,7 +11,7 @@
                                             options:nil]firstObject];
     }
     [self setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height -(44+20))];
-    self.imvHotel.contentMode = UIViewContentModeCenter;
+    self.imvHotel.contentMode = UIViewContentModeScaleAspectFit;
     return self;
 }
 
