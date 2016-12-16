@@ -43,14 +43,15 @@
     [self readData];
     [self hideProgressHUD];
 }
+
 /**
  *  Read data from local data
  */
 -(void)readData{
-    NSUserDefaults *userDefaults            = [NSUserDefaults standardUserDefaults];
-    NSArray *array                          = [userDefaults readArrayWithCustomObjFromUserDefaults:kLIST_HOTEL_INFO_OBJECT];
+    
+    RLMResults<SAHotelInfo *> *array = [SAHotelInfo allObjects];
     if(array){
-        self.listHotelInfoObject            = array;
+        self.listHotelInfoObject            = (NSArray *)array;
         [self.tableView reloadData];
         [self hideProgressHUD];
     }else{
@@ -102,6 +103,7 @@
     if(!cell){
         cell = [[SurveyCellInfo alloc]initCellFromNib];
     }
+//    cell.imvHotel.image = [SAImageViewUtil imageWithImage:cell.imvHotel.image scaledToSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-64)];
     return cell;
 }
 

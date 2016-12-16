@@ -16,17 +16,22 @@ PODS:
     - AFNetworking/NSURLSession
   - DCKeyValueObjectMapping (1.5)
   - MBProgressHUD (0.9.2)
+  - Realm (0.103.1):
+    - Realm/Headers (= 0.103.1)
+  - Realm/Headers (0.103.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - DCKeyValueObjectMapping (~> 1.5)
   - MBProgressHUD (~> 0.9.2)
+  - Realm (~> 0.103.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   DCKeyValueObjectMapping: c2eb5a6529da100b2e49ef6a599663578051f077
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  Realm: 9ed57109332e95bdc48a7caedff80b70c51d5ef4
 
-PODFILE CHECKSUM: 6e45492f0ba74509210f0d6aa01f78f7047bae3a
+PODFILE CHECKSUM: 4f0c3564b7de4f22888d0d0c1fd61fdcf7184419
 
 COCOAPODS: 1.0.0
